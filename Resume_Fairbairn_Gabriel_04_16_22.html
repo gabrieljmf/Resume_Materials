@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        margin: 0%;
+      }
+
+      .parent {
+        display: grid;
+        grid-template-columns: 2fr 6fr 2fr;
+        grid-template-rows: 15vh repeat(9, auto);
+        grid-column-gap: 16px;
+        grid-row-gap: 20px;
+        border-style: inset;
+        border-width: 14px;
+        border-color: rgba(160, 160, 160, 0.608);
+        background-size: cover;
+        background-position-y: -300px;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        /* background-image: url("https://images.unsplash.com/photo-1534534026406-1981db7e5a97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1965&q=80"); */
+        /* background-image: url("https://images.unsplash.com/photo-1554321585-ef3194b190cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"); */
+        background-image: url("https://i.pinimg.com/736x/e3/55/16/e35516b91d2f6bb82cc47800be588465.jpg");
+      }
+
+      .icons {
+        text-align: center;
+      }
+
+      table {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      button.wide {
+        width: 120px;
+        height: auto;
+        color: white;
+        background-color: #007db8;
+        border-radius: 4px;
+        box-shadow: inset 0 0 0 0 #007db8;
+        transition: ease-out 0.3s;
+        font-size: 10pt;
+      }
+
+      button {
+        width: auto;
+        height: auto;
+        color: white;
+        background-color: #007db8;
+        border-radius: 4px;
+        box-shadow: inset 0 0 0 0 #007db8;
+        transition: ease-out 0.3s;
+        font-size: 6pt;
+      }
+
+      button:hover {
+        box-shadow: inset 120px 0 0 0 rgb(255, 230, 0);
+        color: black;
+      }
+
+      #penote1,
+      #penote2,
+      #wenote1,
+      #wenote2,
+      #wenote3,
+      #wenote4,
+      #ccnote1,
+      #ccnote2,
+      #ccnote3,
+      #ccnote4,
+      #lanote1,
+      #lanote2,
+      #lanote3,
+      #lanote4,
+      #lanote5 {
+        display: none;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 28pt;
+        font-family: "Quicksand", sans-serif;
+        margin: 0px;
+      }
+
+      h2 {
+        font-size: 15pt;
+        font-family: "Quicksand", sans-serif;
+        margin: 0px;
+      }
+
+      h3 {
+        font-size: 10pt;
+        margin: 0px;
+      }
+
+      h4 {
+        font-size: 8pt;
+        margin: 0px;
+      }
+
+      p {
+        font-size: 9pt;
+        margin: 0px;
+      }
+
+      .div1 {
+        grid-area: 1 / 1 / 2 / 6;
+        color: black;
+        text-align: center;
+        background-color: rgba(252, 251, 251, 0.473);
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto auto;
+      }
+
+      .name {
+        grid-area: 1 / 1 / 2 / 6;
+      }
+
+      .phone {
+        grid-area: 2 / 1 / 3 / 2;
+      }
+
+      .email {
+        grid-area: 2 / 2 / 3 / 3;
+      }
+
+      .linkedin {
+        grid-area: 2 / 3 / 3 / 4;
+      }
+
+      .github {
+        grid-area: 2 / 4 / 3 / 5;
+      }
+
+      .location {
+        grid-area: 2 / 5 / 3 / 6;
+      }
+
+      .div2 {
+        grid-area: 2 / 1 / 3 / 6;
+        background-color: rgb(252, 251, 251);
+        text-align: center;
+        font-family: "Nunito Sans", sans-serif;
+      }
+
+      .div3 {
+        grid-area: 3 / 1 / 4 / 2;
+        background-color: rgba(252, 251, 251, 0.473);
+        text-align: center;
+      }
+
+      .div4 {
+        grid-area: 3 / 2 / 4 / 4;
+        background-color: rgb(252, 251, 251);
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto;
+        grid-column-gap: 16px;
+        grid-row-gap: 20px;
+      }
+
+      .div4content {
+        grid-area: 1 / 1 / 2 / 2;
+      }
+
+      .div4dates {
+        grid-area: 1 / 2 / 2 / 3;
+        text-align: right;
+      }
+
+      .div5 {
+        grid-area: 4 / 1 / 5 / 2;
+        text-align: center;
+        background-color: rgba(252, 251, 251, 0.473);
+      }
+
+      .div6 {
+        grid-area: 4 / 2 / 5 / 4;
+        background-color: rgb(252, 251, 251);
+        text-align: center;
+      }
+
+      .div7 {
+        grid-area: 5 / 1 / 6 / 2;
+        background-color: rgba(252, 251, 251, 0.473);
+        text-align: center;
+      }
+
+      .div8 {
+        grid-area: 5 / 2 / 6 / 4;
+        background-color: rgb(252, 251, 251);
+        font-size: 8pt;
+      }
+
+      .div9 {
+        grid-area: 6 / 1 / 7 / 2;
+        background-color: rgba(252, 251, 251, 0.473);
+        text-align: center;
+      }
+
+      .div10 {
+        display: grid;
+        grid-area: 6 / 2 / 7 / 4;
+        background-color: rgb(252, 251, 251);
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto;
+        grid-column-gap: 16px;
+        grid-row-gap: 20px;
+        font-size: 8pt;
+      }
+
+      .div10content {
+        grid-area: 1 / 1 / 2 / 2;
+      }
+
+      .div10dates {
+        grid-area: 1 / 2 / 2 / 3;
+        text-align: right;
+      }
+      .div11 {
+        grid-area: 7 / 1 / 8 / 2;
+        background-color: rgba(252, 251, 251, 0.473);
+        text-align: center;
+      }
+
+      .div12 {
+        grid-area: 7 / 2 / 8 / 4;
+        background-color: rgb(252, 251, 251);
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto;
+        grid-column-gap: 16px;
+        grid-row-gap: 20px;
+        font-size: 8pt;
+      }
+
+      .div12content {
+        grid-area: 1 / 1 / 2 / 2;
+      }
+
+      .div12dates {
+        grid-area: 1 / 2 / 2 / 3;
+        text-align: right;
+      }
+
+      .div13 {
+        grid-area: 8 / 1 / 9 / 2;
+        background-color: rgba(252, 251, 251, 0.473);
+        text-align:center;
+      }
+
+      .div14 {
+        grid-area: 8 / 2 / 9 / 4;
+        background-color: rgb(252, 251, 251);
+        font-size: 8pt;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto;
+      }
+
+      .div14content {
+        grid-area: 1 / 1 / 2 / 2;
+      }
+
+      .div14dates {
+        grid-area: 1 / 2 / 2 / 3;
+        text-align: right;
+      }
+
+      .div15 {
+        grid-area: 9 / 1 / 10 / 2;
+        background-color: rgba(252, 251, 251, 0.473);
+      }
+
+      .div16 {
+        grid-area: 9 / 2 / 10 / 4;
+        
+        background-color: rgb(252, 251, 251);
+      }
+
+      .div17 {
+        grid-area: 10 / 1 / 11 / 4;
+        background-color: rgba(252, 251, 251, 0.473);
+        text-align: center;
+        font-style: italic;
+        font-weight: bold;
+      }
+    </style>
+    <title>Resume for Gabriel Fairbairn</title>
+  </head>
+
+  <body>
+    <div class="parent">
+      <div class="div1">
+        <div class="name">
+          <h1>GABRIEL FAIRBAIRN</h1>
+        </div>
+        <div class="phone">
+          <span class="material-icons-outlined" style="font-size: 16px">
+            call
+          </span>
+          (604) 889-5201
+        </div>
+        <div class="email">
+          <span class="material-icons-outlined" style="font-size: 16px">
+            email
+          </span>
+          <a href="mailto:gabrielfair@hotmail.com">email</a>
+        </div>
+        <div class="linkedin">
+          <i class="fa fa-linkedin-square" style="font-size: 16px"></i>
+          <a href="https://www.linkedin.com/in/gabrielfairbairn/">LinkedIn</a>
+        </div>
+        <div class="github">
+          <i class="fa fa-github" style="font-size: 12px"></i>
+          <a href="https://github.com/NerdSlayer0">GitHub</a>
+        </div>
+        <div class="location">
+          <span class="material-icons-outlined" style="font-size: 16px"
+            >location_on</span
+          >
+          Vancouver, BC
+        </div>
+      </div>
+      <div class="div2">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, voluptatem corrupti perferendis amet, architecto possimus maxime reiciendis quis quia dolore quisquam ipsam quae quam maiores reprehenderit libero, voluptas eveniet adipisci.
+      </div>
+      <div class="div3">
+        <h2>Education</h2>
+      </div>
+      <div class="div4">
+        <div class="div4content">
+          <h3>Computer Systems Technology Student - Term 1</h3>
+          <h4>BCIT, Burnaby BC</h4>
+          <br />
+          <h3>Professional Sales Diploma - Marketing Management</h3>
+          <h4>BCIT, Burnaby BC</h4>
+        </div>
+        <div class="div4dates">
+          <h3>Jan 2022-Current</h3>
+          <br />
+          <h3>Sept 2013-May 2016</h3>
+        </div>
+      </div>
+
+      <div class="div5">
+        <h2>Technical Skills</h2>
+      </div>
+      <div class="div6">
+        <table>
+          <tr>
+            <td><button class="wide">Java</button></td>
+            <td><button class="wide">Javascript</button></td>
+            <td><button class="wide">GitHub</button></td>
+          </tr>
+          <tr>
+            <td><button class="wide">HTML5</button></td>
+            <td><button class="wide">CSS Grid</button></td>
+            <td><button class="wide">Node.js</button></td>
+          </tr>
+          <tr>
+            <td><button class="wide">Bootstrap</button></td>
+            <td><button class="wide">Firebase hosting</button></td>
+            <td><button class="wide">Express</button></td>
+          </tr>
+        </table>
+      </div>
+      <div class="div7">
+        <h2>Core Competencies</h2>
+        <button
+          onclick="showDetails('ccnote1', 'ccnote2', 'ccnote3','ccnote4')"
+        >
+          details
+        </button>
+      </div>
+      <div class="div8">
+        <h3>Teamwork</h3>
+        <div id="ccnote1">
+          &emsp;• Teamwork skills applied in all aspects of life including
+          leadership roles, work, school, and sports
+        </div>
+        <h3>Problem Solving/Conflict Resolution</h3>
+        <div id="ccnote2">
+          &emsp;• Six years’ experience in uncovering the needs of B2B accounts
+          and focusing their decisions on long-term outcomes
+        </div>
+        <h3>Active Listener/Learner</h3>
+        <div id="ccnote3">
+          &emsp;• Comfortable with learning new skills outside of the current
+          comfort zone, whether it be transitioning from heavy equipment to
+          financial services, or picking up new personal past-times
+        </div>
+        <h3>Leadership</h3>
+        <div id="ccnote4">
+          &emsp;• As detailed in the leadership section below
+        </div>
+      </div>
+      <div class="div9">
+        <h2>Leadership and Awards</h2>
+        <button
+          onclick="showDetails('lanote1','lanote2','lanote3','lanote4','lanote5')"
+        >
+          details
+        </button>
+      </div>
+      <div class="div10">
+        <div class="div10content">
+          <br />
+          <h3>Leadership Member - BCIT Computer Club</h3>
+          <h4>BCIT, Burnaby BC</h4>
+          <div id="lanote1">
+            &emsp;• Attend weekly club meetings, hosted a COOP Informational
+            event and interviewing skills event
+          </div>
+          <br />
+          <h3>TD Bank Entrance Award Recipient</h3>
+          <h4>BCIT, Burnaby BC</h4>
+          <div id="lanote2">
+            &emsp;• Received the TD Bank Entrance Award for Winter 2022 semester
+            based on leadership efforts and academic community involvement
+          </div>
+          <br />
+          <h3>
+            Set Representative – BCIT Computer Systems Technology Class 1A
+          </h3>
+          <h4>BCIT, Burnaby BC</h4>
+          <div id="lanote3">
+            &emsp;• Coordinate quarterly meetings with professors and other set
+            reps in addressing issues amongst students
+          </div>
+          <div id="lanote4">
+            &emsp;• Responsible for advocating for student success, passing on
+            information, and educating the assigned class in resolving issues
+          </div>
+          <br />
+          <h3>Coding for All Club Member</h3>
+          <h4>BCIT, Burnaby BC</h4>
+          <div id="lanote5">&emsp;• Weekly LeetCode meeting attendance</div>
+        </div>
+        <div class="div10dates">
+          <h3>
+            Jan 2022-Current <br /><br /><br />
+            Jan 2022<br /><br /><br />
+            Jan 2022-Current<br /><br /><br /><br /><br />
+            Jan 2022-Current
+          </h3>
+        </div>
+      </div>
+      <div class="div11">
+        <h2>Project Experience</h2>
+        <button onclick="showDetails('penote1','penote2')">details</button>
+      </div>
+      <div class="div12">
+        <div class="div12content">
+          <h3>Reportify – COVID-19 Reporting App</h3>
+          <h4>BCIT, Burnaby BC</h4>
+          <div id="penote1">
+            &emsp;• Applied learning in Javascript, Firebase hosting, Agile
+            Methods, GitHub, HTML5, Bootstrap, and JQuery<br />
+          </div>
+          <div id="penote2">
+            &emsp;• Developed a working health reporting app for use in
+            business, sports, and leisure organizations with 2 other teammates
+          </div>
+        </div>
+
+        <div class="div12dates">
+          <h3>Jan 2022-Apr 2022</h3>
+        </div>
+      </div>
+
+      <div class="div13">
+        <h2>Work Experience</h2>
+        <button onclick="showDetails('wenote1','wenote2','wenote3','wenote4')">
+          details
+        </button>
+      </div>
+      <div class="div14">
+        <div class="div14content">
+          <h3>Account Manager – Financial Service Sales</h3>
+          <h4>Ritchie Bros. Finance, Burnaby BC</h4>
+          <div id="wenote1">
+            &emsp;• Gained knowledge in financial service products and worked in
+            teams with brokerage, lenders, credit specialists, management, and
+            contract specialists to provide customers with a complete service
+          </div>
+          <br />
+          <h3>
+            Aftermarket Parts Sales – Western USA Territory Representative
+          </h3>
+          <h4>Leavitt Machinery, Langley BC</h4>
+          <div id="wenote2">
+            &emsp;• Leading member of the Western United States territory;
+            oversaw smooth transition of sales through the western team
+            including order picking, warehousing, distribution, shipping,
+            returns, and billing<br />
+            &emsp;• Primary point of contact with significant business accounts
+            dealing with customer management, customer retention, and generating
+            new business
+          </div>
+          <br />
+          <h3>Aftermarket Parts Sales – Internet Representative</h3>
+          <h4>Leavitt Machinery, Langley BC</h4>
+          <div id="wenote3">
+            &emsp;• Customer facing role dealing with book of online B2B users
+          </div>
+          <br />
+          <h3>
+            Sales Representative of Product Support – Fort McMurray Territory
+            Manager
+          </h3>
+          <h4>Leavitt Machinery, Surrey BC</h4>
+          <div id="wenote4">
+            &emsp;• Grew business opportunities within service group with
+            accounts including Suncor and Imperial Oil
+          </div>
+          <br />
+          <h3>Lifeguard/Swim Instructor</h3>
+          <h4>Renfrew Community Centre, Vancouver BC</h4>
+        </div>
+        <div class="div14dates">
+          <h3>
+            Jun 2019-Sept 2021<br /><br /><br />
+            Mar 2018-Apr 2019<br /><br /><br />
+            Jul 2017-Mar 2018<br /><br /><br />
+            Jul 2016-Jul 2017<br /><br />
+            Aug 2009-Apr 2016<br /><br />
+          </h3>
+        </div>
+      </div>
+      <div class="div15">
+        <h2>Activities and Interests</h2>
+      </div>
+      <div class="div16">
+        <p>
+          Member of the Metis Nation of BC, Free-diving and jiujitsu
+          practitioner, 4.0 tennis player at local tournament level, advanced
+          skier/snowboarder, gamer, anime/manga consumer
+        </p>
+      </div>
+      <div class="div17">References available on request</div>
+    </div>
+  </body>
+  <script>
+    function showDetails() {
+      for (var i = 0; i < arguments.length; i++) {
+        var e = document.getElementById(arguments[i]);
+        e.style.display = e.style.display == "block" ? "none" : "block";
+      }
+    }
+  </script>
+</html>
