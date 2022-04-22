@@ -140,6 +140,7 @@
 
       #penote1,
       #penote2,
+      #penote3,
       #wenote1,
       #wenote2,
       #wenote3,
@@ -239,8 +240,6 @@
         display: grid;
         grid-template-columns: 3fr 1fr;
         grid-template-rows: auto;
-        grid-column-gap: 16px;
-        grid-row-gap: 20px;
       }
 
       .div4content {
@@ -334,19 +333,27 @@
         grid-area: 7 / 2 / 8 / 4;
         background-color: rgb(252, 251, 251);
         display: grid;
+        display: grid;
         grid-template-columns: 3fr 1fr;
-        grid-template-rows: auto;
-        grid-column-gap: 16px;
-        grid-row-gap: 20px;
+        grid-template-rows: repeat(2, 1fr);
         font-size: 8pt;
       }
 
-      .div12content {
+      .div12content1 {
         grid-area: 1 / 1 / 2 / 2;
       }
 
-      .div12dates {
+      .div12content2 {
+        grid-area: 2 / 1 / 3 / 2;
+      }
+
+      .div12date1 {
         grid-area: 1 / 2 / 2 / 3;
+        text-align: right;
+      }
+
+      .div12date2 {
+        grid-area: 2 / 2 / 3 / 3;
         text-align: right;
       }
 
@@ -466,13 +473,10 @@
         </div>
       </div>
       <div class="div2">
-        Gabriel's excellent problem solving, leadership, and business
-        communication skills are grounded in 6 years of work experience in
-        professional sales, as well as multiple leadership roles in clubs, work,
-        and school. However, these skills weren't earned without the kindness
-        and support of others. That being said, Gabriel's goal is to build a
-        strong foundation of programming skills so that he may pay that kindness
-        forward for those who follow behind him. 
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti quod
+        labore, doloribus dicta ut possimus maxime, ea, alias dolores ad libero
+        quidem molestias laudantium maiores. Sint repellendus dicta aperiam
+        voluptatem.
       </div>
       <div class="div3">
         <h2>Education</h2>
@@ -528,18 +532,21 @@
           &emsp;• Teamwork skills applied in all aspects of life including
           leadership roles, work, school, and sports
         </div>
-        <br /><h3>Problem Solving/Conflict Resolution</h3>
+        <br />
+        <h3>Problem Solving/Conflict Resolution</h3>
         <div id="ccnote2">
           &emsp;• Six years’ experience in uncovering the needs of B2B accounts
           and focusing their decisions on long-term outcomes
         </div>
-        <br /><h3>Active Listener/Learner</h3>
+        <br />
+        <h3>Active Listener/Learner</h3>
         <div id="ccnote3">
           &emsp;• Comfortable with learning new skills outside of the current
           comfort zone, whether it be transitioning from heavy equipment to
           financial services, or picking up new personal past-times
         </div>
-        <br /><h3>Leadership</h3>
+        <br />
+        <h3>Leadership</h3>
         <div id="ccnote4">
           &emsp;• As detailed in the leadership section below
         </div>
@@ -557,9 +564,10 @@
           <h3>Leadership Member - BCIT Computer Club</h3>
           <h4>BCIT, Burnaby BC</h4>
           <div id="lanote1">
-            &emsp;• Led the term 1 COOP Informational
-            event and interviewing skills event<br />
-            &emsp;• Collaborated with leadership team on organizing BCIT Hackathon and other events
+            &emsp;• Led the term 1 COOP Informational event and interviewing
+            skills event<br />
+            &emsp;• Collaborated with leadership team on organizing BCIT
+            Hackathon and other events
           </div>
         </div>
         <div class="div10content2">
@@ -587,7 +595,9 @@
         <div class="div10content4">
           <h3>Coding for All Club Member</h3>
           <h4>BCIT, Burnaby BC</h4>
-          <div id="lanote5">&emsp;• Practiced coding skills in weekly Leetcode sessions</div>
+          <div id="lanote5">
+            &emsp;• Practiced coding skills in weekly Leetcode sessions
+          </div>
         </div>
         <div class="div10date1">
           <h3>Jan 2022-Current</h3>
@@ -604,23 +614,34 @@
       </div>
       <div class="div11">
         <h2>Projects</h2>
-        <button onclick="showDetails('penote1','penote2')">details</button>
+        <button onclick="showDetails('penote1','penote2','penote3')">
+          details
+        </button>
       </div>
       <div class="div12">
-        <div class="div12content">
+        <div class="div12content1">
+          <h3>Personal Project - Web Resume</h3>
+          <div id="penote1">
+            &emsp;• See the full version:
+            <br />&emsp;https://github.com/NerdSlayer0/Resume_Materials/blob/main/Resume_Fairbairn_Gabriel_04_16_22.html
+          </div>
+        </div>
+        <div id="div12content2">
           <h3>Reportify – COVID-19 Reporting App</h3>
           <h4>BCIT, Burnaby BC</h4>
-          <div id="penote1">
+          <div id="penote2">
             &emsp;• Developed a working health reporting app for use in
             business, sports, and leisure organizations with 2 other teammates
           </div>
-          <div id="penote2">
+          <div id="penote3">
             &emsp;• Applied learning in Javascript, Firebase hosting, Agile
             Methods, GitHub, HTML5, Bootstrap, and JQuery<br />
           </div>
         </div>
-
-        <div class="div12dates">
+        <div class="div12date1">
+          <h3>Apr 2022</h3>
+        </div>
+        <div class="div12date2">
           <h3>Jan 2022-Apr 2022</h3>
         </div>
       </div>
@@ -636,9 +657,9 @@
           <h3>Account Manager – Finance Sales</h3>
           <h4>Ritchie Bros. Finance, Burnaby BC</h4>
           <div id="wenote1">
-            &emsp;• Learnt financial service skills and worked in
-            teams with brokerage, lenders, credit specialists, management, and
-            contract specialists to provide customers with a complete service
+            &emsp;• Learnt financial service skills and worked in teams with
+            brokerage, lenders, credit specialists, management, and contract
+            specialists to provide customers with a complete service
           </div>
         </div>
         <div class="div14content2">
